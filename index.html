@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+
+      <title> Bitcoin - Converter </title>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+      <link rel="icon" href="/img/favicon.ico"> 
+      <meta name="description" content="" />
+
+      <!--[if lt IE 9]>
+         <script src="js/ie/html5shiv.js"></script>
+         <link href="css/ieStyles.css" rel="stylesheet" type="text/css" />
+      <![endif]-->
+
+      <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+      <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+      <link href="css/styles.css" rel="stylesheet" type="text/css" />
+		
+	</head>
+
+	<body>
+
+      <div id="content">
+
+         <div id="currency_exchange_rate">
+
+            <div id="currency_selection_container" class="section">
+
+               <div class="section">
+                  <span id="selected_country" data-placeholder="Select a country">Select a country</span>
+               </div>
+
+               <div id="currency_selection" class="section out">
+                  <input type="text" name="currency_search" placeholder="Search" />
+               </div>
+
+            </div>
+
+            <div class="section">
+
+               <label>Currency Value:
+                  <input type="text" name="from_currency_value" disabled />
+               </label>
+
+               <label>Bitcoin Value:
+                  <input type="text" name="bitcoin_value" disabled />
+               </label>
+
+            </div>
+
+         </div>
+
+      </div>
+
+      <div id="footer">
+         <a href="https://github.com/jasonmng" target="_blank"><img src="images/GitHub_Logo.png" /></a>
+      </div>
+
+       <script type="text/javascript">
+
+         var require = {
+
+          baseUrl: 'js/bower_components'
+          , paths: {
+            underscore: 'lodash/dist/lodash.underscore',
+            marionette: 'backbone.marionette/lib/core/backbone.marionette',
+            modernizr: '../lib/modernizr',
+            bootstrap: '../plugins/bootstrap',
+            jquery: [
+               'http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min',
+               'http://js/jquery-2.0.3.min',
+            ],
+            backbone: 'backbone/backbone',
+            'backbone.wreqr': 'backbone.wreqr/lib/backbone.wreqr',
+            'backbone.babysitter': 'backbone.babysitter/lib/backbone.babysitter',
+            text: 'requirejs-text/text',
+            drivers: '../drivers',
+            modules: '../modules',
+            helpers: '../helpers',
+            lib: '../lib',
+            application: '../application',
+            core: '../core',
+            plugins: '../plugins',
+          }
+          , shim: {
+               underscore: { exports: '_' },
+               'bootstrap': { deps: ['jquery'] },
+               backbone: {
+                 deps: ['underscore', 'jquery'],
+                 exports: 'Backbone'
+               }
+          }
+          , urlArgs: "bust=" +  (new Date()).getTime()
+         };
+
+      </script>
+
+      <!--[if lt IE 9]>
+         <script type="text/javascript">
+            require.paths.jquery[0] = "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min";
+         </script>
+      <![endif]-->
+
+      <!--[if gte IE 9]><!-->
+         <script type="text/javascript">
+            require.paths.jquery[0] = "//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min";
+         </script>
+      <!--<![endif]-->
+
+      <script type="text/javascript" src="js/bower_components/requirejs/require.js"></script>
+
+      <script type="text/javascript">
+
+         require(['require', 'jquery'], function(require, $) {
+             $(function(){ require(['drivers/bitcoin/widgets'], function(app) { app.start() }); });
+         });
+
+      </script>
+
+	</body>
+
+</html>

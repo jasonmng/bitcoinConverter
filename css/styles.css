@@ -1,0 +1,158 @@
+
+*{ -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+/*********************************************************************/
+/* 					APPLICATION - START
+/**********************************************************************/
+
+body { font-family: Verdana, sans-serif; color: #555; }
+
+#content{ position: relative;  padding-top: 80px; }
+
+/*********************************************************************/
+/* 						HELPERS
+/*********************************************************************/
+
+.out { display: none !important; }
+.selected { background-color: #468cc8; }
+.highlight { background-color: #ddd; }
+
+
+/*********************************************************************/
+/* 						FOOTER
+/**********************************************************************/
+
+#footer {
+	background-color: #8af17d;	
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+#footer img {
+	width: 200px;	
+}
+
+/*********************************************************************/
+/* 					CURRENCY CONVERTER
+/**********************************************************************/
+
+#currency_exchange_rate::before{
+	content: '';
+	position: absolute;
+	left:-140px;
+	top: 30px;
+	width: 100%; height: 100%;
+	background: url(images/bitcoin.png) no-repeat;
+}
+
+#currency_exchange_rate{
+	
+	margin: 0 auto;
+	width: 300px;
+	position: relative;
+	text-align: center;
+	border: 1px solid #ddd;
+	padding: 20px 20px;
+	
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#currency_exchange_rate::after{
+	content: '';
+	position: absolute;
+	left: 0; top:  100%;
+	width: 100%; height: 9px;
+	background: url(images/box-shadow.png) no-repeat center bottom;
+}
+
+#currency_exchange_rate input{ 
+	padding: 0;	margin: 0; width: 100%;
+	text-indent: 5px;
+	font-weight: 700;
+	height: 2em;
+}
+
+#currency_exchange_rate .section{
+	position: relative;
+	margin-bottom: 10px;	
+}
+
+#currency_exchange_rate label {
+	text-align: left;	
+}
+
+#currency_selection_container{ position: absolute; }
+
+	#selected_country {
+		display: block;
+		border:  2px solid #ddd;
+		padding: 5px;
+		font-weight: 700;
+		text-align: left;
+		cursor: pointer;
+		
+		padding-right: 35px;
+	}
+	
+	#selected_country::after {
+		font-family: FontAwesome;
+		content: "\f063";
+		position: absolute;
+		right: 0; top: 0;
+		width: 35px;
+		height: 100%;
+		text-align: center;
+		line-height: 2.5em;
+	}
+
+
+	#currency_selection {}
+
+		/* Currency Search Box */
+		#currency_selection input {
+			border-radius: 0;
+			margin-bottom: 5px;
+		}
+
+		#currency_selection ul {
+			z-index: 1;
+		
+			position: absolute;
+			width: 100%;
+		
+			margin: 0;
+			max-height: 500px;
+
+			list-style-type: none;
+		
+			overflow-y: scroll;
+			text-align: left;
+		
+			background-color: #fff;
+			border: 2px solid #ddd;
+			cursor: pointer;
+		}
+
+			#currency_selection li {
+				margin: 5px 0;
+			}
+			
+			#currency_selection li:hover {
+				background-color: #ddd;
+			}
+
+
+
+
+
+
+
+
+
+
