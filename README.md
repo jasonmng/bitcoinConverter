@@ -13,4 +13,4 @@ This module was built using the following:
 - Bootstrap
 - elblow grease.
 
-A live example can be seen here: http://monstergummybears.com
+A live example can be seen here: http://monstergummybears.com/bitcoin
