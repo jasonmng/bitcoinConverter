@@ -168,7 +168,7 @@ define([
        *-------------------------------------*/
       filterList: function( event ){
 
-         var text = this.ui.searchBox.val();
+         var text = this.ui.searchBox.val().toLowerCase();
 
          this.ratesDisplay.set(
             this.ratesCollection.filter( function( model ) { return model.get('country').toLowerCase().indexOf(text) == 0; })
